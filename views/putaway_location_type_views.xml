@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="tha_putaway_location_type_view_tree" model="ir.ui.view">
+        <field name="name">tha.putaway.location.type.tree</field>
+        <field name="model">tha.putaway.location.type</field>
+        <field name="arch" type="xml">
+            <tree string="Putaway Location Types">
+                <field name="name"/>
+                <field name="active" optional="show"/>
+            </tree>
+        </field>
+    </record>
+    <record id="tha_putaway_location_type_view_form" model="ir.ui.view">
+        <field name="name">tha.putaway.location.type.form</field>
+        <field name="model">tha.putaway.location.type</field>
+        <field name="arch" type="xml">
+            <form string="Putaway Location Type">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="active"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="tha_putaway_location_type_action" model="ir.actions.act_window">
+        <field name="name">Putaway Location Types</field>
+        <field name="res_model">tha.putaway.location.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="tha_putaway_location_type_menu"
+              name="Putaway Location Types"
+              parent="stock.menu_warehouse_config"
+              action="tha_putaway_location_type_action"
+              sequence="7"
+              groups="stock.group_stock_manager"/>
+</odoo>

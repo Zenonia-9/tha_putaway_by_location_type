@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="stock_location_form_putaway_type" model="ir.ui.view">
+        <field name="name">stock.location.form.putaway.type</field>
+        <field name="model">stock.location</field>
+        <field name="inherit_id" ref="stock.view_location_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='additional_info']" position="inside">
+                <field name="tha_putaway_location_type_id"
+                       options="{'no_create': True}"
+                       invisible="usage != 'internal'"
+                       groups="stock.group_stock_user"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

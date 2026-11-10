@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_template_form_putaway_type" model="ir.ui.view">
+        <field name="name">product.template.form.putaway.type</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='inventory']" position="inside">
+                <group string="Putaway by Location Type" groups="stock.group_stock_user">
+                    <field name="tha_putaway_location_type_id" options="{'no_create': True}"/>
+                    <button name="action_tha_sync_putaway_rules"
+                            string="Synchronize Putaway Rules"
+                            type="object"
+                            class="oe_link"
+                            invisible="not tha_putaway_location_type_id"/>
+                    <field name="tha_putaway_sync_summary" readonly="1" nolabel="1" colspan="2"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
